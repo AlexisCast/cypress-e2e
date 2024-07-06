@@ -4,7 +4,7 @@ describe("contact form", { defaultCommandTimeout: 4000 }, () => {
 	//for suite config
 	it("should submit the form", { defaultCommandTimeout: 10000 }, () => {
 		// per test config
-		cy.visit("http://localhost:5176/about");
+		cy.visit("/about");
 		cy.get('[data-cy="contact-input-message"]').type("Hello world!");
 		cy.get('[data-cy="contact-input-name"]').type("John Doe");
 		cy.get('[data-cy="contact-btn-submit"]').then((el) => {
@@ -26,7 +26,7 @@ describe("contact form", { defaultCommandTimeout: 4000 }, () => {
 	});
 
 	it("should validate the form input", () => {
-		cy.visit("http://localhost:5176/about");
+		cy.visit("/about");
 		cy.get('[data-cy="contact-btn-submit"]').click();
 		cy.get('[data-cy="contact-btn-submit"]').then((el) => {
 			expect(el).to.not.have.attr("disabled");
