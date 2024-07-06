@@ -1,7 +1,9 @@
 /// <reference types="Cypress" />
 
-describe("contact form", () => {
-	it("should submit the form", () => {
+describe("contact form", { defaultCommandTimeout: 4000 }, () => {
+	//for suite config
+	it("should submit the form", { defaultCommandTimeout: 10000 }, () => {
+		// per test config
 		cy.visit("http://localhost:5176/about");
 		cy.get('[data-cy="contact-input-message"]').type("Hello world!");
 		cy.get('[data-cy="contact-input-name"]').type("John Doe");
