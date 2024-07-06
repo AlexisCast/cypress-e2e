@@ -35,3 +35,7 @@ yarn.lock
 
 # production
 /build
+
+#cypress
+cypress/videos
+cypress/screenshots
