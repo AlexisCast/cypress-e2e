@@ -28,4 +28,15 @@ describe("Newsletter", () => {
 		cy.wait("@subscribe"); // not necessay but it is great practice to know that the next line depends on the interceptor
 		cy.contains("Email exist already.");
 	});
+
+	it("should successfully create a new contract", () => {
+		cy.request({
+			method: "POST",
+			url: "/newsletter",
+			body: { email: "test@example.com" },
+			form: true,
+		}).then((res) => {
+			expect(res.status).to.eq(201);
+		});
+	});
 });
