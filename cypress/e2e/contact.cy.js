@@ -27,6 +27,10 @@ describe("contact form", { defaultCommandTimeout: 4000 }, () => {
 			expect(el.text()).to.eq("Send Message");
 		});
 		cy.screenshot();
+		// cy.get('[data-cy="contact-input-email"]').type(
+		// 	"test@example.com{enter}"
+		// );
+		cy.submitForm();
 		cy.get('[data-cy="contact-input-email"]').type(
 			"test@example.com{enter}"
 		);
@@ -42,7 +46,8 @@ describe("contact form", { defaultCommandTimeout: 4000 }, () => {
 
 	it("should validate the form input", () => {
 		// cy.visit("/about");
-		cy.get('[data-cy="contact-btn-submit"]').click();
+		// cy.get('[data-cy="contact-btn-submit"]').click();
+		cy.submitForm();
 		cy.get('[data-cy="contact-btn-submit"]').then((el) => {
 			expect(el).to.not.have.attr("disabled");
 			expect(el.text()).to.not.equal("Sending...");
