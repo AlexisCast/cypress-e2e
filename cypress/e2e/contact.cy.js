@@ -20,13 +20,19 @@ describe("contact form", { defaultCommandTimeout: 4000 }, () => {
 	it("should submit the form", { defaultCommandTimeout: 10000 }, () => {
 		// per test config
 		// cy.visit("/about");
-		cy.get('[data-cy="contact-input-message"]').type("Hello world!");
-		cy.get('[data-cy="contact-input-name"]').type("John Doe");
+		cy.getById("contact-input-message").type("Hello world!");
+		cy.getById("contact-input-name").type("John Doe");
+		// cy.get('[data-cy="contact-input-message"]').type("Hello world!");
+		// cy.get('[data-cy="contact-input-name"]').type("John Doe");
 		cy.get('[data-cy="contact-btn-submit"]').then((el) => {
 			expect(el.attr("disabled")).to.be.undefined;
 			expect(el.text()).to.eq("Send Message");
 		});
 		cy.screenshot();
+		// cy.get('[data-cy="contact-input-email"]').type(
+		// 	"test@example.com{enter}"
+		// );
+		cy.submitForm();
 		cy.get('[data-cy="contact-input-email"]').type(
 			"test@example.com{enter}"
 		);
@@ -42,7 +48,8 @@ describe("contact form", { defaultCommandTimeout: 4000 }, () => {
 
 	it("should validate the form input", () => {
 		// cy.visit("/about");
-		cy.get('[data-cy="contact-btn-submit"]').click();
+		// cy.get('[data-cy="contact-btn-submit"]').click();
+		cy.submitForm();
 		cy.get('[data-cy="contact-btn-submit"]').then((el) => {
 			expect(el).to.not.have.attr("disabled");
 			expect(el.text()).to.not.equal("Sending...");
