@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/routes/signup.jsx"],
+  "sourcesContent": ["import { json } from \"@remix-run/node\";\n\nimport Auth from \"../components/Auth\";\nimport { signup } from \"../data/auth.server\";\nimport { isValidEmail, isValidPassword } from \"../util/validation.server\";\n\nfunction SignupRoute() {\n\treturn <Auth mode=\"signup\" />;\n}\n\nexport default SignupRoute;\n\nexport async function action({ request }) {\n\tconst formData = await request.formData();\n\tconst credentials = Object.fromEntries(formData);\n\n\tif (\n\t\t!isValidEmail(credentials.email) ||\n\t\t!isValidPassword(credentials.password)\n\t) {\n\t\treturn json(\n\t\t\t{ message: \"Invalid credentials entered.\" },\n\t\t\t{ status: 400 }\n\t\t);\n\t}\n\n\treturn signup(credentials);\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA,kBAAqB;AAGrB,kBAAuB;AACvB,wBAA8C;AAGtC;AADR,SAAS,cAAc;AACtB,SAAO,mDAAC,gBAAK,MAAK,YAAX;AAAA;AAAA;AAAA;AAAA,SAAoB;AAC5B;AAEA,IAAO,iBAAQ;",
+  "names": []
+}

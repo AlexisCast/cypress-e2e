@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["empty-module:../data/prisma.server", "../../../app/components/Takeaways.jsx"],
+  "sourcesContent": ["module.exports = {};", "function Takeaways({ items }) {\n\treturn (\n\t\t<ul className=\"grid grid-cols-2 gap-8 max-w-2xl mx-auto my-12\">\n\t\t\t{items.map((item) => (\n\t\t\t\t<li key={item.id} data-cy=\"takeaway-item\">\n\t\t\t\t\t<article className=\"bg-slate-800 rounded-md p-8\">\n\t\t\t\t\t\t<h3 className=\"font-bold text-lg mb-2 text-blue-400\">\n\t\t\t\t\t\t\t{item.title}\n\t\t\t\t\t\t</h3>\n\t\t\t\t\t\t<p className=\"text-slate-400\">{item.body}</p>\n\t\t\t\t\t</article>\n\t\t\t\t</li>\n\t\t\t))}\n\t\t</ul>\n\t);\n}\n\nexport default Takeaways;\n"],
+  "mappings": ";;;;;;;;;AAAA;AAAA;AAAA,WAAO,UAAU,CAAC;AAAA;AAAA;;;ACMZ;AANN,SAAS,UAAU,EAAE,MAAM,GAAG;AAC7B,SACC,mDAAC,QAAG,WAAU,kDACZ,gBAAM,IAAI,CAAC,SACX,mDAAC,QAAiB,WAAQ,iBACzB,6DAAC,aAAQ,WAAU,+BAClB;AAAA,uDAAC,QAAG,WAAU,wCACZ,eAAK,SADP;AAAA;AAAA;AAAA;AAAA,WAEA;AAAA,IACA,mDAAC,OAAE,WAAU,kBAAkB,eAAK,QAApC;AAAA;AAAA;AAAA;AAAA,WAAyC;AAAA,OAJ1C;AAAA;AAAA;AAAA;AAAA,SAKA,KANQ,KAAK,IAAd;AAAA;AAAA;AAAA;AAAA,SAOA,CACA,KAVF;AAAA;AAAA;AAAA;AAAA,SAWA;AAEF;AAEA,IAAO,oBAAQ;",
+  "names": []
+}

@@ -1,0 +1,83 @@
+import {
+  Takeaways_default,
+  require_prisma
+} from "/build/_shared/chunk-KBLIVVQZ.js";
+import {
+  Link,
+  require_jsx_dev_runtime,
+  useLoaderData
+} from "/build/_shared/chunk-YXUAIDMU.js";
+import {
+  __toESM
+} from "/build/_shared/chunk-IU43IUTG.js";
+
+// app/routes/index.jsx
+var import_prisma = __toESM(require_prisma());
+var import_jsx_dev_runtime = __toESM(require_jsx_dev_runtime());
+function Index() {
+  const takeways = useLoaderData();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "text-center max-w-5xl mx-auto my-4", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h1", { className: "font-bold text-2xl my-4", children: "Learn Cypress" }, void 0, false, {
+        fileName: "app/routes/index.jsx",
+        lineNumber: 11,
+        columnNumber: 5
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: "Cypress is an amazing end-to-end testing software and framework." }, void 0, false, {
+        fileName: "app/routes/index.jsx",
+        lineNumber: 12,
+        columnNumber: 5
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: "Manage your key Cypress takeaways and concepts with our learning app." }, void 0, false, {
+        fileName: "app/routes/index.jsx",
+        lineNumber: 16,
+        columnNumber: 5
+      }, this)
+    ] }, void 0, true, {
+      fileName: "app/routes/index.jsx",
+      lineNumber: 10,
+      columnNumber: 4
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "text-center max-w-5xl mx-auto my-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Takeaways_default, { items: takeways }, void 0, false, {
+      fileName: "app/routes/index.jsx",
+      lineNumber: 22,
+      columnNumber: 5
+    }, this) }, void 0, false, {
+      fileName: "app/routes/index.jsx",
+      lineNumber: 21,
+      columnNumber: 4
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
+      Link,
+      {
+        to: "/takeaways/new",
+        className: "bg-blue-700 text-blue-50 rounded-sm px-8 py-4 text-lg hover:bg-blue-600",
+        children: "+ Add a new takeaway"
+      },
+      void 0,
+      false,
+      {
+        fileName: "app/routes/index.jsx",
+        lineNumber: 26,
+        columnNumber: 6
+      },
+      this
+    ) }, void 0, false, {
+      fileName: "app/routes/index.jsx",
+      lineNumber: 25,
+      columnNumber: 5
+    }, this) }, void 0, false, {
+      fileName: "app/routes/index.jsx",
+      lineNumber: 24,
+      columnNumber: 4
+    }, this)
+  ] }, void 0, true, {
+    fileName: "app/routes/index.jsx",
+    lineNumber: 9,
+    columnNumber: 3
+  }, this);
+}
+export {
+  Index as default
+};
+//# sourceMappingURL=/build/routes/index-56Z2WCYT.js.map
