@@ -36,6 +36,17 @@
 //   }
 // }
 
+Cypress.Commands.add("login", () => {
+	cy.visit("/login");
+	cy.get('[data-cy="auth-email"]').click();
+	cy.get('[data-cy="auth-email"]').type("test@example.com"); // user exist beacuse of seed-test.js
+	cy.get('[data-cy="auth-password"]').click();
+	cy.get('[data-cy="auth-password"]').type("testpassword");
+	cy.get('[data-cy="auth-submit"]').click();
+	cy.location("pathname").should("eq", "/takeaways");
+	cy.getCookie("__session").its("value").should("not.be.empty");
+});
+
 // the below code snippet is required to handle a React hydration bug that would cause tests to fail
 // it's only a workaround until this React behavior / bug is fixed
 Cypress.on("uncaught:exception", (err) => {

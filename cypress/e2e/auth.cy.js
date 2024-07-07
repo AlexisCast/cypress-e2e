@@ -41,4 +41,12 @@ describe("Auth", () => {
 		cy.location("pathname").should("eq", "/");
 		cy.getCookie("__session").its("value").should("be.empty");
 	});
+
+	it("should logout, reusable 'login' command", () => {
+		cy.login();
+
+		cy.contains("Logout").click();
+		cy.location("pathname").should("eq", "/");
+		cy.getCookie("__session").its("value").should("be.empty");
+	});
 });
