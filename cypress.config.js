@@ -6,7 +6,7 @@ export default defineConfig({
 	e2e: {
 		baseUrl: "http://localhost:3000",
 		setupNodeEvents(on, config) {
-			// implement node event listeners here
+			// implement node event listeners here when using cy.task("___")
 			on("task", {
 				async seedDatabase() {
 					await seed();
